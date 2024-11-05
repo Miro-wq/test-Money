@@ -1,0 +1,30 @@
+/* DashboardComponent.module.css */
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 0;
+  min-width: 280px;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .mainDiv {
+    flex-direction: row;
+    gap: 16px;
+    padding: 20px 0 0 0;
+    min-width: 192px;
+    max-width: 192px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .mainDiv {
+    margin-top: 60px;
+    min-width: 213px;
+    max-width: 213px;
+    gap: 32px;
+  }
+}

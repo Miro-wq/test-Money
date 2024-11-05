@@ -1,0 +1,52 @@
+.expenseListContainer {
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+  }
+  
+  .expenseItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .colorBox {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+  
+  .label {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #c7c7d1;
+  }
+  
+  .amount {
+    font-size: 14px;
+    color: #ffffff;
+  }
+  
+  .summary {
+    margin-top: 20px;
+  }
+  
+  .summaryItem {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .expensesAmount {
+    color: #ff5c5c;
+  }
+  
+  .incomeAmount {
+    color: #ffae42;
+  }
+  

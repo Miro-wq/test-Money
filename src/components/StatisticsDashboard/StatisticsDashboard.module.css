@@ -1,0 +1,30 @@
+.chartContainer {
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chartTitle {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.chartError {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.statisticsDashboard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
