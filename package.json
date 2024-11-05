@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Miro-wq.github.io/test-Money",
+  "homepage": "https://Miro-wq.github.io/test-Money/",
   "dependencies": {
     "@chakra-ui/react": "^3.0.1",
     "@emotion/react": "^11.13.3",
