@@ -1,17 +1,27 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import {
-  selectExpensesByCategory,
-  selectTotalBalance,
-} from '../../redux/selectors/transactionsSelector';
+import { selectExpensesByCategory } from '../../redux/selectors/transactionsSelector';
+import { getUserInfo } from '../../redux/operations/authOperations';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Chart = () => {
+  const dispatch = useDispatch();
   const expensesByCategory = useSelector(selectExpensesByCategory);
-  const balance = useSelector(selectTotalBalance) || 0;
+  const [userInfo, setUserInfo] = useState({ balance: 0 });
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      const result = await dispatch(getUserInfo()).unwrap();
+      setUserInfo(result);
+    };
+
+    fetchUserInfo();
+  }, [dispatch]);
 
   const categories = [
     { label: 'Main expenses', color: '#fed057' },
@@ -70,7 +80,7 @@ const Chart = () => {
         }}
       >
         ₹
-        {balance.toLocaleString('en-US', {
+        {(userInfo.balance || 0).toLocaleString('en-US', {
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         })}
