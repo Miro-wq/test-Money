@@ -39,9 +39,8 @@ const TransactionsDesktopRow = ({
 
   let textClass = '';
 
-  // Determine class based on data
   if (type === 'INCOME') {
-    textClass = styles.incomeText; // Access class from CSS module
+    textClass = styles.incomeText;
   } else if (type === 'EXPENSE') {
     textClass = styles.expenseText;
   }

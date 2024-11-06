@@ -1,101 +1,71 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectTransactionsByCategory } from '../../redux/selectors/transactionsSelector';
 import styles from './StatisticsTable.module.css';
+import {
+  selectExpensesByCategory,
+  selectTotalExpenses,
+  selectTotalBalance,
+} from '../../redux/selectors/transactionsSelector';
 
 const StatisticsTable = () => {
-  const transactionsByCategory = useSelector(selectTransactionsByCategory);
+  const expensesByCategory = useSelector(selectExpensesByCategory);
+  const totalExpenses = useSelector(selectTotalExpenses);
+  const totalIncome = useSelector(selectTotalBalance);
 
-  useEffect(() => {
-    console.log('Sume pe categorii:', transactionsByCategory);
-  }, [transactionsByCategory]);
-
-  const expenses = [
-    {
-      label: 'Main expenses',
-      amount: transactionsByCategory['Main expenses'] || 0,
-      color: '#fed057',
-    },
-    {
-      label: 'Products',
-      amount: transactionsByCategory['Products'] || 0,
-      color: '#ffd8d0',
-    },
-    {
-      label: 'Car',
-      amount: transactionsByCategory['Car'] || 0,
-      color: '#FFADAD',
-    },
-    {
-      label: 'Self care',
-      amount: transactionsByCategory['Self care'] || 0,
-      color: '#D0A8FF',
-    },
-    {
-      label: 'Child care',
-      amount: transactionsByCategory['Child care'] || 0,
-      color: '#8F9BFF',
-    },
-    {
-      label: 'Household products',
-      amount: transactionsByCategory['Household products'] || 0,
-      color: '#6E7FFF',
-    },
-    {
-      label: 'Education',
-      amount: transactionsByCategory['Education'] || 0,
-      color: '#65E2FF',
-    },
-    {
-      label: 'Leisure',
-      amount: transactionsByCategory['Leisure'] || 0,
-      color: '#47D5A4',
-    },
-    {
-      label: 'Other expenses',
-      amount: transactionsByCategory['Other expenses'] || 0,
-      color: '#28B491',
-    },
+  const categories = [
+    { label: 'Main expenses', color: '#fed057' },
+    { label: 'Products', color: '#ffd8d0' },
+    { label: 'Car', color: '#FFADAD' },
+    { label: 'Self care', color: '#D0A8FF' },
+    { label: 'Child care', color: '#8F9BFF' },
+    { label: 'Household products', color: '#6E7FFF' },
+    { label: 'Education', color: '#65E2FF' },
+    { label: 'Leisure', color: '#47D5A4' },
+    { label: 'Other expenses', color: '#28B491' },
   ];
 
-  const totalExpenses = expenses
-    .reduce((sum, expense) => sum + expense.amount, 0)
-    .toFixed(2);
-  const income = 27350.0;
-
   return (
-    <div className={styles.expenseListContainer}>
-      {expenses.map((expense, index) => (
-        <div key={index} className={styles.expenseItem}>
-          <span
-            className={styles.colorBox}
-            style={{ backgroundColor: expense.color }}
-          ></span>
-          <span className={styles.label}>{expense.label}</span>
-          <span className={styles.amount}>
-            {expense.amount.toLocaleString('en-US', {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </span>
-        </div>
-      ))}
-      <div className={styles.summary}>
-        <div className={styles.summaryItem}>
-          <span>Expenses:</span>
-          <span className={styles.expensesAmount}>{totalExpenses}</span>
-        </div>
-        <div className={styles.summaryItem}>
-          <span>Income:</span>
-          <span className={styles.incomeAmount}>
-            {income.toLocaleString('en-US', {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })}
-          </span>
-        </div>
-      </div>
-    </div>
+    <table className={styles.statisticsTable}>
+      <thead className={styles.tableHead}>
+        <tr>
+          <th>Category</th>
+          <th className={styles.end}>Sum</th>
+        </tr>
+      </thead>
+      <tbody>
+        {categories.map(({ label, color }) => (
+          <tr key={label}>
+            <td>
+              <span
+                className={styles.colorBox}
+                style={{ backgroundColor: color }}
+              ></span>
+              {label}
+            </td>
+            <td className={styles.end}>
+              {expensesByCategory[label]
+                ? expensesByCategory[label].toLocaleString('en-US', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
+                : '0.00'}
+            </td>
+          </tr>
+        ))}
+        <tr className={styles.totalRow}>
+          <td>Expenses:</td>
+          <td className={`${styles.end} ${styles.expensesTotal}`}>
+            {totalExpenses}
+          </td>
+        </tr>
+        <tr className={styles.incomeRow}>
+          <td>Income:</td>
+          <td className={`${styles.end} ${styles.incomeTotal}`}>
+            {totalIncome}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 

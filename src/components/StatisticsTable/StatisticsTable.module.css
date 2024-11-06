@@ -1,52 +1,75 @@
-.expenseListContainer {
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 300px;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-  }
-  
-  .expenseItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .colorBox {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 10px;
-  }
-  
-  .label {
-    flex-grow: 1;
-    font-size: 14px;
-    color: #c7c7d1;
-  }
-  
-  .amount {
-    font-size: 14px;
-    color: #ffffff;
-  }
-  
-  .summary {
-    margin-top: 20px;
-  }
-  
-  .summaryItem {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-  }
-  
-  .expensesAmount {
-    color: #ff5c5c;
-  }
-  
-  .incomeAmount {
-    color: #ffae42;
-  }
-  
+.statisticsTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.tableHead {
+  color: #fbfbfb;
+  background: #523b7e99;
+  box-shadow: 0px 4px 60px 0px #00000040;
+  backdrop-filter: blur(50px);
+}
+
+tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.end {
+  text-align: end !important;
+}
+
+.expensesTotal {
+  color: #ffae42 !important;
+}
+
+.incomeTotal {
+  color: #ff5c5c !important;
+}
+
+.statisticsTable th,
+.statisticsTable td {
+  padding: 8px 15px;
+  text-align: left;
+}
+
+.statisticsTable th {
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 0.7;
+}
+
+.statisticsTable tbody tr td:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.colorBox {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.totalRow,
+.incomeRow {
+  font-weight: bold;
+  border-top: 1px solid #ffffff33;
+}
+
+.totalRow td,
+.incomeRow td {
+  color: #ffffff;
+}
+
+.summary {
+  padding-top: 15px;
+  border-top: 1px solid #ffffff33;
+}
+
+.expensesAmount,
+.incomeAmount {
+  font-weight: bold;
+  color: #ffffff;
+}
