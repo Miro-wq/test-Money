@@ -11,7 +11,6 @@ function Balance() {
 
   useEffect(() => {
     dispatch(getUserInfo());
-    console.log('balance', balance);
   }, [dispatch]);
 
   const balance = useSelector(selectBalance);

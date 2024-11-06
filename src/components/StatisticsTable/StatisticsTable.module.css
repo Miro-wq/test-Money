@@ -21,11 +21,11 @@ tr {
 }
 
 .expensesTotal {
-  color: #ffae42 !important;
+  color: #ff5c5c !important;
 }
 
 .incomeTotal {
-  color: #ff5c5c !important;
+  color: #ffae42 !important;
 }
 
 .statisticsTable th,

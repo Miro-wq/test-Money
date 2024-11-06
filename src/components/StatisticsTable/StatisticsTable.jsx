@@ -11,6 +11,7 @@ const StatisticsTable = () => {
   const expensesByCategory = useSelector(selectExpensesByCategory);
   const totalExpenses = useSelector(selectTotalExpenses);
   const totalIncome = useSelector(selectTotalBalance);
+  console.log('totalIncome', totalIncome);
 
   const categories = [
     { label: 'Main expenses', color: '#fed057' },
@@ -61,7 +62,8 @@ const StatisticsTable = () => {
         <tr className={styles.incomeRow}>
           <td>Income:</td>
           <td className={`${styles.end} ${styles.incomeTotal}`}>
-            {totalIncome}
+            {totalIncome}{' '}
+            {/* =============================pregatit pentru income =================================*/}
           </td>
         </tr>
       </tbody>
