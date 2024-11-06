@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/test-Money/static/css/main.02072259.css",
-    "main.js": "/test-Money/static/js/main.4b9eca5d.js",
+    "main.css": "/test-Money/static/css/main.076a55fe.css",
+    "main.js": "/test-Money/static/js/main.3b9b34a0.js",
     "static/media/loginBackground.png": "/test-Money/static/media/loginBackground.866fc1b8b43577f32cf9.png",
     "static/media/registerBackground.png": "/test-Money/static/media/registerBackground.5255b2054b78d3c7da2c.png",
     "static/media/sprite.svg": "/test-Money/static/media/sprite.d1e24b8f31cbd1bcbb337f4d61d4a14e.svg",
@@ -9,11 +9,11 @@
     "index.html": "/test-Money/index.html",
     "static/media/icon_Lacat.svg": "/test-Money/static/media/icon_Lacat.544c180c1034a33fc2b34edc90db3774.svg",
     "static/media/icon_Email.svg": "/test-Money/static/media/icon_Email.2fd943bf0862565ef169609b1a6d9ab7.svg",
-    "main.02072259.css.map": "/test-Money/static/css/main.02072259.css.map",
-    "main.4b9eca5d.js.map": "/test-Money/static/js/main.4b9eca5d.js.map"
+    "main.076a55fe.css.map": "/test-Money/static/css/main.076a55fe.css.map",
+    "main.3b9b34a0.js.map": "/test-Money/static/js/main.3b9b34a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.02072259.css",
-    "static/js/main.4b9eca5d.js"
+    "static/css/main.076a55fe.css",
+    "static/js/main.3b9b34a0.js"
   ]
 }
